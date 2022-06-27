@@ -4,3 +4,23 @@
   padding: 0;
   box-sizing: border-box;
 }
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.todolist-box {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 30px;
+  border-radius: 15px;
+  padding-top: 50px;
+  padding: 30px;
+  background-color: #f4f7f7;
+}
+
+.todo-element {
+  border-bottom: 1px solid gray;
+  padding: 10px;
+}
