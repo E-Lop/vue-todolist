@@ -23,8 +23,13 @@ ul {
 .todo-element {
   border-bottom: 1px solid gray;
   padding: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .crossed {
   text-decoration: line-through;
+}
+.xmark {
+  cursor: pointer;
 }
