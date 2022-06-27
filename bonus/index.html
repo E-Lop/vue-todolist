@@ -35,13 +35,13 @@
           <!-- every todo item in the array will be displayed as follows -->
           <li
             class="todo-element"
-            :class="{'crossed': todos[index].done === true}"
+            :class="{'crossed': element.done === true}"
             v-for="(element, index) in todos"
             @click="doneUndone(index)"
           >
-            <div>{{todos[index].text}}</div>
+            <div>{{element.text}}</div>
             <!-- x mark at the end of the todo item line that removes the todo item from the array -->
-            <div @click="removeTodoItem(index)" class="xmark">
+            <div @click.stop="removeTodoItem(index)" class="xmark">
               <i class="fa-solid fa-xmark"></i>
             </div>
           </li>

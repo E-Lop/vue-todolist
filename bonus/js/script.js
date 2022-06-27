@@ -59,8 +59,8 @@ var app = new Vue({
         this.todos.push({
           text: this.userNewTodo,
           done: false,
-        }),
-          (this.userNewTodo = '');
+        });
+        this.userNewTodo = '';
       }
     },
     /* toggles the todo item as done (line through) or not done */
