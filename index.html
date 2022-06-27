@@ -11,7 +11,11 @@
   <body>
     <div id="root">
       <ul class="todolist-box">
-        <li class="todo-element" v-for="(element, index) in todos">
+        <li
+          class="todo-element"
+          :class="{'crossed': todos[index].done === true}"
+          v-for="(element, index) in todos"
+        >
           {{todos[index].text}}
         </li>
       </ul>
