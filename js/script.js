@@ -33,6 +33,7 @@ Bonus:
 var app = new Vue({
   el: '#root',
   data: {
+    userNewTodo: '',
     todos: [
       {
         text: 'Fare i compiti',
@@ -52,6 +53,16 @@ var app = new Vue({
     // remove todo item from todo array based on index
     removeTodoItem(itemindex) {
       this.todos.splice(itemindex, 1);
+    },
+    // if input text is not empty add text input as a new object to the array and reset the input text area
+    addNewTodoToArray() {
+      if (this.userNewTodo.length > 0) {
+        this.todos.push({
+          text: this.userNewTodo,
+          done: false,
+        }),
+          (this.userNewTodo = '');
+      }
     },
   },
 });
