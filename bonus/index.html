@@ -16,7 +16,9 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   </head>
   <body>
+    <!-- START OF VUE.JS ELEMENTS -->
     <div id="root">
+      <!-- user input field to add new todos -->
       <div class="user_input_todo">
         <input
           type="text"
@@ -26,19 +28,32 @@
         />
         <button type="button" @click="addNewTodoToArray()">Aggiungi</button>
       </div>
+
+      <!-- list of user's todo items -->
       <ul class="todolist-box">
-        <li
-          class="todo-element"
-          :class="{'crossed': todos[index].done === true}"
-          v-for="(element, index) in todos"
-        >
-          <div>{{todos[index].text}}</div>
-          <div @click="removeTodoItem(index)" class="xmark">
-            <i class="fa-solid fa-xmark"></i>
-          </div>
-        </li>
+        <div v-if="todos.length > 0">
+          <!-- every todo item in the array will be displayed as follows -->
+          <li
+            class="todo-element"
+            :class="{'crossed': todos[index].done === true}"
+            v-for="(element, index) in todos"
+            @click="doneUndone(index)"
+          >
+            <div>{{todos[index].text}}</div>
+            <!-- x mark at the end of the todo item line that removes the todo item from the array -->
+            <div @click="removeTodoItem(index)" class="xmark">
+              <i class="fa-solid fa-xmark"></i>
+            </div>
+          </li>
+        </div>
+        <!-- Message below only shown if there are no more Todos left to do -->
+        <div v-else>
+          <p id="no-todos-left">Non ci sono altri Todo da fare, complimenti!</p>
+        </div>
       </ul>
     </div>
+    <!-- END OF VUE.JS ELEMENTS -->
+
     <script type="text/javascript" src="js/script.js"></script>
   </body>
 </html>

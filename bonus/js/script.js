@@ -49,11 +49,11 @@ var app = new Vue({
     ],
   },
   methods: {
-    // remove todo item from todo array based on index
+    // removes a todo item from the todo array, based on index
     removeTodoItem(itemindex) {
       this.todos.splice(itemindex, 1);
     },
-    // if input text is not empty add text input as a new object to the array and reset the input text area
+    // if input text is not empty adds text input as a new object to the array and resets the input text area
     addNewTodoToArray() {
       if (this.userNewTodo.length > 0) {
         this.todos.push({
@@ -62,6 +62,10 @@ var app = new Vue({
         }),
           (this.userNewTodo = '');
       }
+    },
+    /* toggles the todo item as done (line through) or not done */
+    doneUndone(index) {
+      this.todos[index].done = !this.todos[index].done;
     },
   },
 });

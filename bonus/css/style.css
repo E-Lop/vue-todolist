@@ -42,6 +42,7 @@ ul {
   border-bottom: 1px solid gray;
   padding: 10px;
   display: flex;
+  font-size: 2rem;
   justify-content: space-between;
 }
 
@@ -50,4 +51,9 @@ ul {
 }
 .xmark {
   cursor: pointer;
+}
+#no-todos-left {
+  text-align: center;
+  color: green;
+  font-size: 2rem;
 }
