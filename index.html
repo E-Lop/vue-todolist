@@ -24,7 +24,9 @@
           v-for="(element, index) in todos"
         >
           <div>{{todos[index].text}}</div>
-          <div class="xmark"><i class="fa-solid fa-xmark"></i></div>
+          <div @click="removeTodoItem(index)" class="xmark">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
         </li>
       </ul>
     </div>

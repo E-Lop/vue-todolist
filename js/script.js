@@ -48,5 +48,10 @@ var app = new Vue({
       },
     ],
   },
-  methods: {},
+  methods: {
+    // remove todo item from todo array based on index
+    removeTodoItem(itemindex) {
+      this.todos.splice(itemindex, 1);
+    },
+  },
 });
